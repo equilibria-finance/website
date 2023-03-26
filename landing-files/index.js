@@ -2,6 +2,20 @@ var currentIndex = 0;
 let prevScrollPos = window.pageYOffset;
 let last = 0;
 const innerContainer = document.querySelectorAll(".inner-container");
+const sidebarContainer = document.getElementById(
+	"side-bar-container"
+);
+
+document.getElementById("hamburger").addEventListener("click", () => {
+	document.body.style.overflow = "hidden";
+	sidebarContainer.classList.add("side-bar-show");
+	sidebarContainer.classList.remove("side-bar-hide");
+});
+document.getElementById("close").addEventListener("click", () => {
+	document.body.style.overflow = "auto";
+	sidebarContainer.classList.add("side-bar-hide");
+	sidebarContainer.classList.remove("side-bar-show");
+});
 
 function scrollToSmoothly(pos, time) {
 	var currentPos = window.pageYOffset;
@@ -49,7 +63,7 @@ scroll = (up) => {
 			innerContainer[currentIndex].classList.add("active");
 			scrollToSmoothly(position, 500);
 		}
-		if (currentIndex < 4 && !up) {
+		if (currentIndex + 1 < 4 && !up) {
 			innerContainer[currentIndex].classList.add("hide");
 			setTimeout(() => {
 				innerContainer[currentIndex - 1].classList.remove("active");
@@ -73,15 +87,18 @@ document.addEventListener("touchstart", function (event) {
 
 document.addEventListener("touchmove", function (event) {
 	endY = event.touches[0].clientY;
-	event.preventDefault();
 });
 
-document.addEventListener("touchend", function () {
-	if (endY < startY) {
-		scroll(true);
-	} else if (endY > startY) {
-		scroll(false);
+document.addEventListener("touchend", function (event) {
+	if (startY != 0 && endY != 0) {
+		if (startY - endY > 20) {
+			scroll(false);
+		} else if (endY - startY > 20) {
+			scroll(true);
+		}
 	}
+	startY = 0;
+	endY = 0;
 });
 
 window.onscroll = function (e) {
