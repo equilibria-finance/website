@@ -28,6 +28,7 @@ body {
 	font-family: "Gilroy-Regular", sans-serif;
 	height: 100vh;
 	overflow: scroll;
+	overflow-x: hidden !important;
 	background: linear-gradient(
 		to right,
 		rgba(#838bc5, 0.2),
@@ -35,6 +36,96 @@ body {
 		rgba(#838bc5, 0.4),
 		rgba(#838bc5, 0.2)
 	);
+	.sidebar-container {
+		background-color: $primary-col;
+		padding: 30px 50px 50px 50px;
+		position: relative;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: none;
+		overflow: hidden;
+		z-index: 100;
+		padding-top: 60px;
+		&.side-bar-show {
+			animation: slide-right 0.5s ease-in-out forwards;
+		}
+		&.side-bar-hide {
+			animation: sidebar-slide-left 0.5s ease-in-out forwards;
+		}
+		@keyframes slide-right {
+			from {
+				transform: translateX(-100%);
+			}
+			to {
+				transform: translateX(0%);
+			}
+		}
+		@keyframes sidebar-slide-left {
+			from {
+				transform: translateX(0%);
+			}
+			to {
+				transform: translateX(-100%);
+			}
+		}
+
+		ul {
+			list-style: none;
+			color: white;
+			margin-top: 40px;
+
+			li {
+				margin-bottom: 20px;
+
+				a {
+					color: white;
+					text-decoration: none;
+				}
+			}
+		}
+		.logo {
+			svg {
+				height: 100px;
+				width: 255px;
+			}
+		}
+		.close {
+			position: absolute;
+			right: 10px;
+			top: 30px;
+			padding: 5px 10px;
+			color: white;
+		}
+		.sidebar-social {
+			width: max-content;
+			background-color: #fff;
+			padding: 10px;
+			border-radius: 10px;
+
+			a {
+				text-decoration: none;
+			}
+			svg {
+				height: 30px;
+				fill: $primary-col;
+			}
+		}
+	}
+	.hamburger {
+		display: none;
+	}
+	@media screen and (max-width: 550px) {
+		.sidebar-container {
+			display: block;
+			transform: translateX(-100%);
+		}
+		.hamburger {
+			display: block;
+		}
+	}
 	.whole-container {
 		width: 100%;
 		position: relative;
@@ -202,20 +293,11 @@ body {
 					@media screen and (max-width: 550px) {
 						.logo {
 							svg {
-								width: 160px;
+								width: 220px;
 							}
 						}
 						.links {
-							.social-links {
-								display: none;
-							}
-							.other-links {
-								gap: 10px;
-								margin-right: 0;
-								a {
-									font-size: 10px;
-								}
-							}
+							display: none;
 						}
 					}
 				}
