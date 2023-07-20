@@ -381,16 +381,36 @@ body {
 		}
 	}
 	.fifth-container {
-		.main-content {
-			width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.fifth-content {
+			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			align-items: center;
+			gap: 50px;
+		}
+		.text-container {
+			h1 {
+				font-family: "Gilroy-Bold", sans-serif;
+				font-size: 64px;
+				@media screen and (max-width: 600px) {
+					font-size: 40px;
+				}
+			}
 		}
 		.image-container {
 			display: flex;
 			gap: 50px;
+			div {
+				display: flex;
+				gap: 50px;
+			}
 			img {
 				height: 100px;
+			}
+			@media screen and (max-width: 600px) {
+				flex-direction: column;
 			}
 		}
 	}
