@@ -334,10 +334,12 @@ body {
 
 		.card {
 			&:last-child {
-				border-left: 9px solid transparent;
 				padding-bottom: 0;
+
+				&::after {
+					display: none;
+				}
 			}
-			border-left: 9px solid $primary-col;
 			position: relative;
 			padding-left: 40px;
 			padding-bottom: 50px;
@@ -366,6 +368,20 @@ body {
 			left: -56.5px;
 			transform: translateY(-1px);
 		}
+		.card::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -8.5px;
+			width: 9px;
+			height: 0;
+			background-color: $primary-col;
+			transition: height 2s linear;
+		}
+		.card.show::after {
+			height: 100%;
+		}
+
 		@media screen and (max-width: 880px) {
 			.card {
 				padding-bottom: 30px;

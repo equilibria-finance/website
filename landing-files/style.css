@@ -415,7 +415,6 @@ body .fourth-container .outer {
 }
 
 body .fourth-container .card {
-  border-left: 9px solid #3251bf;
   position: relative;
   padding-left: 40px;
   padding-bottom: 50px;
@@ -424,8 +423,11 @@ body .fourth-container .card {
 }
 
 body .fourth-container .card:last-child {
-  border-left: 9px solid transparent;
   padding-bottom: 0;
+}
+
+body .fourth-container .card:last-child::after {
+  display: none;
 }
 
 body .fourth-container .info {
@@ -455,6 +457,22 @@ body .fourth-container .title::before {
   left: -56.5px;
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
+}
+
+body .fourth-container .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8.5px;
+  width: 9px;
+  height: 0;
+  background-color: #3251bf;
+  -webkit-transition: height 2s linear;
+  transition: height 2s linear;
+}
+
+body .fourth-container .card.show::after {
+  height: 100%;
 }
 
 @media screen and (max-width: 880px) {

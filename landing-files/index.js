@@ -76,6 +76,12 @@ scroll = (up) => {
 			innerContainer[currentIndex].classList.add("active");
 			scrollToSmoothly(position, 500);
 		}
+		if (currentIndex == 3) {
+			cards = document.querySelectorAll(".card");
+			cards.forEach((el) => {
+				el.classList.add("show");
+			});
+		}
 	}
 };
 
