@@ -112,3 +112,14 @@ document
 		currentIndex = 0;
 		scroll(false);
 	});
+
+document.addEventListener("DOMContentLoaded", function () {
+	var fullURL = window.location.href;
+	if (fullURL.includes("#")) {
+		var sectionID = fullURL.split("#")[1];
+		if (sectionID == "whitepaper") {
+			currentIndex = 2;
+			scroll(false);
+		}
+	}
+});
