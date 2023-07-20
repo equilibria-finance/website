@@ -63,7 +63,7 @@ scroll = (up) => {
 			innerContainer[currentIndex].classList.add("active");
 			scrollToSmoothly(position, 500);
 		}
-		if (currentIndex + 1 < 4 && !up) {
+		if (currentIndex + 1 < 6 && !up) {
 			innerContainer[currentIndex].classList.add("hide");
 			setTimeout(() => {
 				innerContainer[currentIndex - 1].classList.remove("active");
@@ -106,3 +106,9 @@ window.onscroll = function (e) {
 	prevScrollPos = this.scrollY;
 	scroll(up);
 };
+document
+	.getElementById("show-more-btn")
+	.addEventListener("click", () => {
+		currentIndex = 0;
+		scroll(false);
+	});
