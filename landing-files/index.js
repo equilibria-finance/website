@@ -95,16 +95,20 @@ document.addEventListener("touchmove", function (event) {
 	endY = event.touches[0].clientY;
 });
 
+let popupActive = false;
+
 document.addEventListener("touchend", function (event) {
-	if (startY != 0 && endY != 0) {
-		if (startY - endY > 20) {
-			scroll(false);
-		} else if (endY - startY > 20) {
-			scroll(true);
+	if (!popupActive) {
+		if (startY != 0 && endY != 0) {
+			if (startY - endY > 20) {
+				scroll(false);
+			} else if (endY - startY > 20) {
+				scroll(true);
+			}
 		}
+		startY = 0;
+		endY = 0;
 	}
-	startY = 0;
-	endY = 0;
 });
 
 window.onscroll = function (e) {
@@ -135,6 +139,7 @@ document.getElementById("popup-btn").addEventListener("click", () => {
 		"none";
 	document.querySelector(".popup-container").style.display = "block";
 	document.body.style.overflow = "hidden";
+	popupActive = true;
 });
 document
 	.getElementById("popup-close-btn")
@@ -143,4 +148,5 @@ document
 			"flex";
 		document.querySelector(".popup-container").style.display = "none";
 		document.body.style.overflow = "scroll";
+		popupActive = false;
 	});
