@@ -405,9 +405,104 @@ body .first-container .show-more p {
   font-weight: bolder;
 }
 
-body .fourth-container .timeline {
-  margin: 20px auto;
+body .fourth-container .main-content {
+  height: 100%;
+}
+
+body .fourth-container .title-container {
+  width: 100%;
+}
+
+body .fourth-container .title-container h1 {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 40px;
+}
+
+body .fourth-container .mobile-screen-container {
+  display: none;
   padding: 20px;
+}
+
+body .fourth-container .mobile-screen-container button {
+  width: 200px;
+  padding: 10px;
+  background-color: #3251bf;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+@media screen and (max-width: 730px) {
+  body .fourth-container {
+    padding: 0;
+  }
+  body .fourth-container .mobile-screen-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+  body .fourth-container .popup-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: scroll;
+    display: none;
+    padding: 0 0 50px;
+    margin-top: 75px;
+  }
+  body .fourth-container .popup-container .popup-button-container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+  }
+  body .fourth-container .popup-container #popup-close-btn {
+    display: block;
+    padding: 10px;
+    background-color: #3251bf;
+    color: white;
+    outline: none;
+    border: none;
+    width: 100%;
+  }
+  body .fourth-container .popup-container .timeline {
+    padding: 20px;
+  }
+}
+
+body .fourth-container .popup-button-container {
+  display: none;
+}
+
+body .fourth-container .timeline {
+  margin: 0px auto;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px;
+}
+
+body .fourth-container .timeline .timeline-title {
+  margin-left: 30px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 40px;
 }
 
 body .fourth-container .outer {
@@ -477,16 +572,7 @@ body .fourth-container .card.show::after {
 
 @media screen and (max-width: 880px) {
   body .fourth-container .card {
-    padding-bottom: 30px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  body .fourth-container .title {
-    font-size: 16px;
-  }
-  body .fourth-container .info p {
-    font-size: 10px;
+    padding-bottom: 20px;
   }
 }
 

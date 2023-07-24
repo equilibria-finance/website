@@ -28,6 +28,7 @@ body {
 	font-family: "Gilroy-Regular", sans-serif;
 	height: 100vh;
 	overflow: scroll;
+	// overflow: hidden;
 	overflow-x: hidden !important;
 	background: linear-gradient(
 		to right,
@@ -323,9 +324,83 @@ body {
 		}
 	}
 	.fourth-container {
-		.timeline {
-			margin: 20px auto;
+		.main-content {
+			height: 100%;
+		}
+		.title-container {
+			width: 100%;
+			h1 {
+				font-family: "Gilroy-Bold", sans-serif;
+				font-size: 40px;
+			}
+		}
+		.mobile-screen-container {
+			display: none;
 			padding: 20px;
+
+			button {
+				width: 200px;
+				padding: 10px;
+				background-color: $primary-col;
+				color: white;
+				outline: none;
+				border: none;
+			}
+		}
+		@media screen and (max-width: 730px) {
+			padding: 0;
+			.mobile-screen-container {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+			}
+			.popup-container {
+				.popup-button-container {
+					display: block;
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					padding: 20px 30px;
+				}
+				#popup-close-btn {
+					display: block;
+					padding: 10px;
+					background-color: $primary-col;
+					color: white;
+					outline: none;
+					border: none;
+					width: 100%;
+				}
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				overflow: scroll;
+				display: none;
+				padding: 0 0 50px;
+				margin-top: 75px;
+				.timeline {
+					padding: 20px;
+				}
+			}
+		}
+		.popup-button-container {
+			display: none;
+		}
+		.timeline {
+			margin: 0px auto;
+			padding: 0 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 50px;
+			.timeline-title {
+				margin-left: 30px;
+				font-family: "Gilroy-Bold", sans-serif;
+				font-size: 40px;
+			}
 		}
 
 		.outer {
@@ -384,15 +459,7 @@ body {
 
 		@media screen and (max-width: 880px) {
 			.card {
-				padding-bottom: 30px;
-			}
-		}
-		@media screen and (max-width: 700px) {
-			.title {
-				font-size: 16px;
-			}
-			.info p {
-				font-size: 10px;
+				padding-bottom: 20px;
 			}
 		}
 	}

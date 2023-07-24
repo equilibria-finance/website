@@ -129,3 +129,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 });
+
+document.getElementById("popup-btn").addEventListener("click", () => {
+	document.querySelector(".mobile-screen-container").style.display =
+		"none";
+	document.querySelector(".popup-container").style.display = "block";
+	document.body.style.overflow = "hidden";
+});
+document
+	.getElementById("popup-close-btn")
+	.addEventListener("click", () => {
+		document.querySelector(".mobile-screen-container").style.display =
+			"flex";
+		document.querySelector(".popup-container").style.display = "none";
+		document.body.style.overflow = "scroll";
+	});
