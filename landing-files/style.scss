@@ -230,10 +230,8 @@ body {
 			justify-content: space-between;
 			align-items: center;
 			.logo {
-				height: 50px;
-				svg {
-					height: 50px;
-					width: 300px;
+				img {
+					width: 250px;
 				}
 			}
 			.links {
@@ -263,7 +261,7 @@ body {
 			}
 			@media screen and (max-width: 800px) {
 				.logo {
-					svg {
+					img {
 						width: 200px;
 					}
 				}
@@ -295,11 +293,6 @@ body {
 						}
 					}
 					@media screen and (max-width: 550px) {
-						.logo {
-							svg {
-								width: 220px;
-							}
-						}
 						.links {
 							display: none;
 						}
@@ -576,7 +569,7 @@ body {
 				align-items: center;
 				justify-content: space-between;
 				padding: 20px;
-				svg {
+				img {
 					width: 255px;
 				}
 
