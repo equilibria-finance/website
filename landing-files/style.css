@@ -304,7 +304,7 @@ body .first-container .navbar .logo {
   height: 50px;
 }
 
-body .first-container .navbar .logo img {
+body .first-container .navbar .logo svg {
   height: 50px;
   width: 300px;
 }
@@ -782,14 +782,8 @@ body .sixth-container .footer-container .footer-content {
   padding: 20px;
 }
 
-body .sixth-container .footer-container .footer-content img {
+body .sixth-container .footer-container .footer-content svg {
   width: 255px;
-}
-
-@media screen and (max-width: 565px) {
-  body .sixth-container .footer-container .footer-content img {
-    width: 200px;
-  }
 }
 
 body .sixth-container .footer-container .footer-content a {
