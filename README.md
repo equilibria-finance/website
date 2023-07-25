@@ -1,6 +1,6 @@
 <h1>Equilibria Finance</h1>
 
-![Logo](https://github.com/equilibria-finance/equilibria-finance/assets/128416370/69c0cbe5-7567-445b-bcf5-8886e763177a)
+![LogoType](https://github.com/equilibria-finance/website/assets/128416370/f57b998c-66bb-43d4-9361-dc20b30d07df)
 
 <h2>Introduction</h2>
 Welcome to Equilibria Finance. We are the first and leading Lending protocol on Hedera Ecosystem.
