@@ -231,7 +231,7 @@ body {
 			align-items: center;
 			.logo {
 				height: 50px;
-				img {
+				svg {
 					height: 50px;
 					width: 300px;
 				}
@@ -576,12 +576,8 @@ body {
 				align-items: center;
 				justify-content: space-between;
 				padding: 20px;
-				img {
+				svg {
 					width: 255px;
-
-					@media screen and (max-width: 565px) {
-						width: 200px;
-					}
 				}
 
 				a {
